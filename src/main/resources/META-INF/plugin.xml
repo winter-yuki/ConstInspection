@@ -1,18 +1,20 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.winteryuki.constinspection</id>
-    <name>ConstInspection</name>
+    <name>Const Inspection</name>
     <vendor>winter-yuki</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.winteryuki.constinspection.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.winteryuki.constinspection.services.MyProjectService"/>
+        <localInspection language="kotlin"
+                         displayName="Constant inspection in Kotlin"
+                         groupPath="Kotlin"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.github.winteryuki.constinspection.ConstKotlinInspection"/>
     </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.winteryuki.constinspection.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
 </idea-plugin>
