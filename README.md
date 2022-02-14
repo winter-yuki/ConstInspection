@@ -18,8 +18,8 @@ $ ./gradlew :runIde
 
 IntelliJ IDEA version >= 2021.1 is supported.
 
-Download `.jar` file and load it to your IntelliJ IDEA:
-. Double shift
-. Type "Install plugin from disk"
-. Choose `.jar` file
-. Reload IDEA
+Download `.jar` file from [Releases](https://github.com/winter-yuki/ConstInspection/releases) and load it to your IntelliJ IDEA:
+1. Double shift
+2. Type "Install plugin from disk"
+3. Choose `.jar` file
+4. Reload IDEA
